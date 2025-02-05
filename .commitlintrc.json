@@ -1,8 +1,15 @@
 {
   "extends": ["@commitlint/config-conventional"],
   "rules": {
-    "subject-case": ["sentence-case"],
-    "body-max-line-length": [72],
-    "scope-empty": [false]
+    "type-enum": [
+      2,
+      "always",
+      ["feat", "fix", "docs", "style", "refactor", "test", "chore", "revert"]
+    ],
+    "subject-empty": [2, "never"],
+    "subject-full-stop": [2, "never"],
+    "subject-case": [2, "sentence-case"],
+    "scope-empty": [2, "never"],
+    "scope-case": [2, "lower-case"]
   }
 }
