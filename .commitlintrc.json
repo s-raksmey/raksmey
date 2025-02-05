@@ -1,8 +1,8 @@
 {
   "extends": ["@commitlint/config-conventional"],
   "rules": {
-    "scope-enum": [0, "never"],
-    "scope-empty": [0, "never"],
-    "scope-case": [0, "never"]
+    "subject-case": ["sentence-case"],
+    "body-max-line-length": [72],
+    "scope-empty": [false]
   }
 }
