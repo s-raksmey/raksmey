@@ -10,9 +10,7 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "prepare": "husky install",
-    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "dependencies": {
     "next": "15.1.6",
