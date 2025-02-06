@@ -8,8 +8,7 @@
     ],
     "subject-empty": [2, "never"],
     "subject-full-stop": [2, "never"],
-    "subject-case": [2, "sentence-case"],
-    "scope-empty": [2, "never"],
-    "scope-case": [2, "lower-case"]
+    "subject-case": [2, "never", ["sentence-case"]],
+    "scope-case": [2, "always", "lower-case"]
   }
 }
