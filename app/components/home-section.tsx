@@ -45,15 +45,19 @@ export function HomeSection() {
       initial="hidden"
       animate="show"
       className="grid gap-12 rounded-3xl border p-8 shadow-xl backdrop-blur-sm md:grid-cols-[1.2fr_1fr] md:items-center"
-      style={{ backgroundColor: "var(--surface-elevated)" }}
+      style={{
+        backgroundColor: "var(--surface-elevated)",
+        borderColor: "var(--border)",
+        boxShadow: "0 25px 70px rgba(0, 0, 0, 0.45)",
+      }}
     >
       <div className="space-y-8">
         <span
           className="inline-flex w-fit items-center gap-2 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em]"
           style={{
             borderColor: "var(--accent)",
-            backgroundColor: "var(--surface-muted)",
-            color: "var(--accent)",
+            backgroundColor: "var(--accent)",
+            color: "var(--accent-foreground)",
           }}
         >
           Portfolio
@@ -89,7 +93,14 @@ export function HomeSection() {
           </a>
         </div>
       </div>
-      <div className="space-y-6 rounded-3xl border p-6 shadow-inner" style={{ backgroundColor: "var(--surface-muted)" }}>
+      <div
+        className="space-y-6 rounded-3xl border p-6 shadow-inner"
+        style={{
+          backgroundColor: "var(--surface-muted)",
+          borderColor: "var(--border)",
+          boxShadow: "inset 0 0 35px rgba(39, 245, 60, 0.12)",
+        }}
+      >
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--accent)" }}>
             Current focus
@@ -111,7 +122,10 @@ export function HomeSection() {
               initial="hidden"
               animate="show"
               className="group relative overflow-hidden rounded-2xl border p-4"
-              style={{ backgroundColor: "var(--surface-elevated)" }}
+              style={{
+                background: "linear-gradient(135deg, rgba(39, 245, 60, 0.16), rgba(39, 245, 60, 0.02))",
+                borderColor: "var(--border)",
+              }}
             >
               <div className="flex items-baseline justify-between">
                 <span className="text-4xl font-semibold" style={{ color: "var(--accent)" }}>

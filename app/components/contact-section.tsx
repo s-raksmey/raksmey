@@ -11,7 +11,11 @@ export function ContactSection() {
       transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
       viewport={{ once: true, amount: 0.3 }}
       className="space-y-10 rounded-3xl border p-8 shadow-xl"
-      style={{ backgroundColor: "var(--surface-elevated)" }}
+      style={{
+        background: "linear-gradient(150deg, rgba(39, 245, 60, 0.14), rgba(39, 245, 60, 0.04))",
+        borderColor: "var(--border)",
+        boxShadow: "0 30px 80px rgba(0, 0, 0, 0.45)",
+      }}
     >
       <div className="flex flex-col gap-3">
         <span
@@ -88,7 +92,11 @@ export function ContactSection() {
         </form>
         <div
           className="space-y-6 rounded-3xl border p-6 text-sm"
-          style={{ backgroundColor: "var(--surface-muted)", color: "var(--muted-foreground)" }}
+          style={{
+            background: "linear-gradient(160deg, rgba(39, 245, 60, 0.18), rgba(39, 245, 60, 0.04))",
+            color: "var(--muted-foreground)",
+            borderColor: "var(--border)",
+          }}
         >
           <div>
             <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--accent)" }}>
