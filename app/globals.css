@@ -2,18 +2,18 @@
 
 :root {
   color-scheme: dark;
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #111111;
-  --muted-foreground: rgba(255, 255, 255, 0.72);
-  --border: rgba(39, 245, 60, 0.35);
-  --ring: #27f53c;
-  --surface-elevated: #0d0d0d;
-  --surface-muted: #141414;
-  --surface-subtle: rgba(39, 245, 60, 0.18);
-  --accent: #27f53c;
-  --accent-foreground: #000000;
-  --shadow-accent: 0 20px 60px rgba(39, 245, 60, 0.35);
+  --background: #0b0d10;
+  --foreground: #f5f6f7;
+  --muted: #11151a;
+  --muted-foreground: rgba(245, 246, 247, 0.7);
+  --border: rgba(140, 255, 174, 0.2);
+  --ring: #8cffae;
+  --surface-elevated: #151a21;
+  --surface-muted: #10151b;
+  --surface-subtle: rgba(140, 255, 174, 0.12);
+  --accent: #8cffae;
+  --accent-foreground: #0b0d10;
+  --shadow-accent: 0 16px 40px rgba(140, 255, 174, 0.25);
 }
 
 @theme inline {
@@ -45,13 +45,13 @@ body {
 }
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(39, 245, 60, 0.18), rgba(39, 245, 60, 0.05));
+  background: color-mix(in srgb, var(--surface-muted) 80%, transparent);
   border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28);
 }
 
 .button-secondary {
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   background-color: transparent;
   color: var(--foreground);
   transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
@@ -60,8 +60,8 @@ body {
 .button-secondary:hover,
 .button-secondary:focus-visible {
   border-color: var(--accent);
-  background-color: var(--accent);
-  color: var(--accent-foreground);
+  background-color: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent);
 }
 
 .accent-link {

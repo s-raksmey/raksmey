@@ -6,42 +6,27 @@ export function ContactSection() {
   return (
     <motion.section
       id="contact"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true, amount: 0.3 }}
-      className="space-y-10 rounded-3xl border p-8 shadow-xl"
-      style={{
-        background: "linear-gradient(150deg, rgba(39, 245, 60, 0.14), rgba(39, 245, 60, 0.04))",
-        borderColor: "var(--border)",
-        boxShadow: "0 30px 80px rgba(0, 0, 0, 0.45)",
-      }}
+      className="space-y-10 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]/70 p-8"
     >
       <div className="flex flex-col gap-3">
-        <span
-          className="text-sm font-semibold uppercase tracking-[0.4em]"
-          style={{ color: "var(--accent)" }}
-        >
+        <span className="text-sm font-semibold uppercase tracking-[0.4em] text-[color:var(--accent)]">
           Collaborations
         </span>
-        <h2
-          className="text-3xl font-semibold sm:text-4xl"
-          style={{ color: "var(--foreground)" }}
-        >
+        <h2 className="text-3xl font-semibold text-[color:var(--foreground)] sm:text-4xl">
           Ready to craft something remarkable together?
         </h2>
-        <p className="max-w-2xl text-base" style={{ color: "var(--muted-foreground)" }}>
-          Share your ambitions and we’ll map the journey—from framing the opportunity to shipping
-          polished, measurable experiences.
+        <p className="max-w-2xl text-base text-[color:var(--muted-foreground)]">
+          Share your ambitions and we’ll map the journey—from framing the opportunity to shipping polished, measurable experiences.
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:items-start">
-        <form className="grid gap-4 text-sm" style={{ color: "var(--foreground)" }}>
+        <form className="grid gap-4 text-sm text-[color:var(--foreground)]">
           <label className="grid gap-2">
-            <span
-              className="uppercase tracking-[0.3em] text-[0.7rem]"
-              style={{ color: "var(--accent)" }}
-            >
+            <span className="uppercase tracking-[0.3em] text-[0.7rem] text-[color:var(--accent)]">
               Name
             </span>
             <input
@@ -51,10 +36,7 @@ export function ContactSection() {
             />
           </label>
           <label className="grid gap-2">
-            <span
-              className="uppercase tracking-[0.3em] text-[0.7rem]"
-              style={{ color: "var(--accent)" }}
-            >
+            <span className="uppercase tracking-[0.3em] text-[0.7rem] text-[color:var(--accent)]">
               Email
             </span>
             <input
@@ -64,10 +46,7 @@ export function ContactSection() {
             />
           </label>
           <label className="grid gap-2">
-            <span
-              className="uppercase tracking-[0.3em] text-[0.7rem]"
-              style={{ color: "var(--accent)" }}
-            >
+            <span className="uppercase tracking-[0.3em] text-[0.7rem] text-[color:var(--accent)]">
               Project details
             </span>
             <textarea
@@ -79,42 +58,29 @@ export function ContactSection() {
           <motion.button
             type="submit"
             whileTap={{ scale: 0.97 }}
-            className="inline-flex w-fit items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-1"
-            style={{
-              backgroundColor: "var(--accent)",
-              color: "var(--accent-foreground)",
-              boxShadow: "var(--shadow-accent)",
-            }}
+            className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-[color:var(--accent)] px-6 py-3 text-sm font-semibold text-[color:var(--accent-foreground)] shadow-[var(--shadow-accent)] transition-transform hover:-translate-y-0.5"
           >
             Send message
             <span aria-hidden>→</span>
           </motion.button>
         </form>
-        <div
-          className="space-y-6 rounded-3xl border p-6 text-sm"
-          style={{
-            background: "linear-gradient(160deg, rgba(39, 245, 60, 0.18), rgba(39, 245, 60, 0.04))",
-            color: "var(--muted-foreground)",
-            borderColor: "var(--border)",
-          }}
-        >
+        <div className="space-y-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)]/70 p-6 text-sm text-[color:var(--muted-foreground)]">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--accent)" }}>
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--accent)]">
               Email
             </p>
             <a
               href="mailto:hello@raksmey.design"
-              className="accent-link mt-2 inline-block text-base font-semibold"
-              style={{ color: "var(--foreground)" }}
+              className="accent-link mt-2 inline-block text-base font-semibold text-[color:var(--foreground)]"
             >
               hello@raksmey.design
             </a>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--accent)" }}>
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--accent)]">
               Social
             </p>
-            <ul className="mt-3 space-y-2" style={{ color: "var(--foreground)" }}>
+            <ul className="mt-3 space-y-2 text-[color:var(--foreground)]">
               <li>
                 <a className="accent-link" style={{ color: "inherit" }} href="https://github.com/raksmey" target="_blank" rel="noreferrer">
                   GitHub
@@ -133,10 +99,10 @@ export function ContactSection() {
             </ul>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--accent)" }}>
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--accent)]">
               Location
             </p>
-            <p className="mt-2 text-base" style={{ color: "var(--foreground)" }}>
+            <p className="mt-2 text-base text-[color:var(--foreground)]">
               Phnom Penh, Cambodia · Remote friendly
             </p>
           </div>
