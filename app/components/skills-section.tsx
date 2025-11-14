@@ -21,59 +21,40 @@ export function SkillsSection() {
   return (
     <motion.section
       id="skills"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true, amount: 0.3 }}
-      className="space-y-10"
+      className="space-y-8"
     >
       <div className="flex flex-col gap-3">
-        <span
-          className="text-sm font-semibold uppercase tracking-[0.4em]"
-          style={{ color: "var(--accent)" }}
-        >
+        <span className="text-sm font-semibold uppercase tracking-[0.4em] text-[color:var(--accent)]">
           Expertise
         </span>
-        <h2
-          className="text-3xl font-semibold sm:text-4xl"
-          style={{ color: "var(--foreground)" }}
-        >
+        <h2 className="text-3xl font-semibold text-[color:var(--foreground)] sm:text-4xl">
           Bridging research, design, and technology for cohesive products.
         </h2>
-        <p className="max-w-2xl text-base" style={{ color: "var(--muted-foreground)" }}>
-          Modular thinking meets storytelling craft—equipping teams with processes, rituals, and
-          component systems that amplify velocity.
+        <p className="max-w-2xl text-base text-[color:var(--muted-foreground)]">
+          Modular thinking meets storytelling craft—equipping teams with processes, rituals, and component systems that amplify velocity.
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-3">
         {skillGroups.map((group, index) => (
           <motion.div
             key={group.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.65, ease: [0.33, 1, 0.68, 1] }}
+            transition={{ delay: index * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, amount: 0.4 }}
-            className="relative overflow-hidden rounded-3xl border p-6 shadow-lg"
-            style={{
-              background: "linear-gradient(160deg, rgba(39, 245, 60, 0.16), rgba(39, 245, 60, 0.02))",
-              borderColor: "var(--border)",
-              boxShadow: "0 25px 70px rgba(0, 0, 0, 0.4)",
-            }}
+            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]/80 p-6"
           >
-            <div
-              className="absolute right-4 top-4 h-14 w-14 rounded-full opacity-30"
-              style={{ background: "radial-gradient(circle at center, var(--accent) 0%, transparent 70%)" }}
-            />
-            <h3 className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
+            <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
               {group.title}
             </h3>
-            <ul className="mt-5 space-y-3 text-sm" style={{ color: "var(--muted-foreground)" }}>
+            <ul className="mt-4 space-y-3 text-sm text-[color:var(--muted-foreground)]">
               {group.items.map((skill) => (
                 <li key={skill} className="flex items-center gap-3">
-                  <span
-                    className="h-2 w-2 rounded-full"
-                    style={{ backgroundColor: "var(--accent)" }}
-                  />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
                   <span>{skill}</span>
                 </li>
               ))}

@@ -1,136 +1,69 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-const projects = [
-  {
-    title: "Aurora Marketing Suite",
-    description:
-      "Data-driven campaign platform with modular components, empowering teams to ship brand-consistent stories across the globe.",
-    year: "2024",
-    role: "Product Design · Frontend",
-  },
-  {
-    title: "Lumen Analytics",
-    description:
-      "High-contrast dashboard for monitoring sustainability metrics with real-time collaboration and custom insight tooling.",
-    year: "2023",
-    role: "Design Systems",
-  },
-  {
-    title: "Atlas Knowledge Hub",
-    description:
-      "Content-rich knowledge base with immersive onboarding, AI assisted search, and world-class accessibility compliance.",
-    year: "2022",
-    role: "Experience Strategy",
-  },
-];
+import { featuredProjects } from "../data/projects";
 
 export function ProjectsSection() {
   return (
     <motion.section
       id="projects"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true, amount: 0.2 }}
       className="space-y-10"
     >
-      <div className="flex flex-col gap-3">
-        <span
-          className="text-sm font-semibold uppercase tracking-[0.4em]"
-          style={{ color: "var(--accent)" }}
+      <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div className="space-y-3">
+          <span className="text-sm font-semibold uppercase tracking-[0.4em] text-[color:var(--accent)]">
+            Featured Projects
+          </span>
+          <h2 className="text-3xl font-semibold text-[color:var(--foreground)] sm:text-4xl">
+            Designing ecosystems that feel calm under pressure.
+          </h2>
+          <p className="max-w-2xl text-base text-[color:var(--muted-foreground)]">
+            A selection of collaborations spanning product strategy, interface systems, and hands-on front-end builds.
+          </p>
+        </div>
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--accent)] transition-transform hover:translate-x-1"
         >
-          Featured Projects
-        </span>
-        <h2
-          className="text-3xl font-semibold sm:text-4xl"
-          style={{ color: "var(--foreground)" }}
-        >
-          Designing product ecosystems that scale with ambition.
-        </h2>
-        <p className="max-w-3xl text-base" style={{ color: "var(--muted-foreground)" }}>
-          Multi-disciplinary partnerships with founders, SaaS teams, and global organizations to
-          orchestrate expressive yet resilient experiences.
-        </p>
+          View all projects
+          <span aria-hidden>→</span>
+        </Link>
       </div>
-      <div className="grid gap-8">
-        {projects.map((project, index) => (
+      <div className="grid gap-6 md:grid-cols-3">
+        {featuredProjects.map((project, index) => (
           <motion.article
-            key={project.title}
-            initial={{ opacity: 0, y: 32 }}
+            key={project.slug}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="group relative overflow-hidden rounded-3xl border p-8 shadow-lg transition-transform hover:-translate-y-2"
-            style={{
-              background: "linear-gradient(145deg, rgba(39, 245, 60, 0.14), rgba(39, 245, 60, 0.03))",
-              borderColor: "var(--border)",
-              boxShadow: "0 30px 80px rgba(0, 0, 0, 0.45)",
-            }}
+            transition={{ delay: index * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="flex h-full flex-col gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]/80 p-5"
           >
-            <div className="flex flex-col justify-between gap-6 md:flex-row">
-              <div className="space-y-4">
-                <div
-                  className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em]"
-                  style={{ color: "var(--muted-foreground)" }}
-                >
-                  <span
-                    className="h-2 w-2 rounded-full"
-                    style={{ backgroundColor: "var(--accent)" }}
-                  />
-                  <span>{project.year}</span>
-                  <span style={{ color: "var(--accent)" }}>{project.role}</span>
-                </div>
-                <h3
-                  className="text-2xl font-semibold sm:text-3xl"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  {project.title}
-                </h3>
-                <p className="max-w-2xl text-base" style={{ color: "var(--muted-foreground)" }}>
-                  {project.description}
-                </p>
-              </div>
-              <div className="flex flex-col items-start gap-4 md:items-end">
-                <div
-                  className="rounded-2xl border px-5 py-3 text-sm font-medium"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(39, 245, 60, 0.22), rgba(39, 245, 60, 0.08))",
-                    color: "var(--foreground)",
-                    borderColor: "var(--border)",
-                  }}
-                >
-                  {project.role}
-                </div>
-                <a
-                  className="inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1"
-                  style={{ color: "var(--accent)" }}
-                  href="#contact"
-                >
-                  Request the case study
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12L12 4M12 4H6M12 4V10"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
+            <div className="flex items-baseline justify-between text-xs uppercase tracking-[0.3em] text-[color:var(--muted-foreground)]">
+              <span>{project.year}</span>
+              <span className="text-[color:var(--accent)]">{project.role}</span>
             </div>
-            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-              <div
-                className="absolute inset-x-6 bottom-4 h-1 rounded-full bg-gradient-to-r from-transparent to-transparent"
-                style={{ backgroundImage: "linear-gradient(90deg, transparent, var(--accent), transparent)" }}
-              />
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-[color:var(--foreground)]">
+                {project.title}
+              </h3>
+              <p className="text-sm text-[color:var(--muted-foreground)]">{project.summary}</p>
+            </div>
+            <div className="mt-auto flex flex-wrap gap-2 text-xs text-[color:var(--muted-foreground)]">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-[color:var(--border)] bg-[color:var(--background)]/70 px-3 py-1"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </motion.article>
         ))}
