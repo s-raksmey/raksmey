@@ -10,7 +10,11 @@ export function SiteFooter() {
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       viewport={{ once: true, amount: 0.3 }}
       className="mt-16 rounded-3xl border px-6 py-6 text-sm shadow-md"
-      style={{ backgroundColor: "var(--surface-elevated)", color: "var(--muted-foreground)" }}
+      style={{
+        background: "linear-gradient(145deg, rgba(39, 245, 60, 0.12), rgba(39, 245, 60, 0.04))",
+        color: "var(--muted-foreground)",
+        borderColor: "var(--border)",
+      }}
     >
       <div className="flex flex-col gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
         <p style={{ color: "var(--foreground)" }}>

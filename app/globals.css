@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --muted: #e2e8f0;
-  --muted-foreground: #475569;
-  --border: #d5deed;
-  --ring: #2563eb;
-  --surface-elevated: #ffffff;
-  --surface-muted: #eef2ff;
-  --surface-subtle: rgba(148, 163, 184, 0.15);
-  --accent: #2563eb;
-  --accent-foreground: #0f172a;
-  --shadow-accent: 0 20px 40px rgba(37, 99, 235, 0.25);
+  color-scheme: dark;
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #111111;
+  --muted-foreground: rgba(255, 255, 255, 0.72);
+  --border: rgba(39, 245, 60, 0.35);
+  --ring: #27f53c;
+  --surface-elevated: #0d0d0d;
+  --surface-muted: #141414;
+  --surface-subtle: rgba(39, 245, 60, 0.18);
+  --accent: #27f53c;
+  --accent-foreground: #000000;
+  --shadow-accent: 0 20px 60px rgba(39, 245, 60, 0.35);
 }
 
 @theme inline {
@@ -28,22 +28,6 @@
   --radius-lg: 1.25rem;
   --radius-md: 0.75rem;
   --radius-sm: 0.5rem;
-}
-
-[data-theme="dark"] {
-  color-scheme: dark;
-  --background: #030712;
-  --foreground: #e2e8f0;
-  --muted: #0f172a;
-  --muted-foreground: #94a3b8;
-  --border: #1f2937;
-  --ring: #38bdf8;
-  --surface-elevated: rgba(15, 23, 42, 0.75);
-  --surface-muted: rgba(30, 41, 59, 0.55);
-  --surface-subtle: rgba(59, 130, 246, 0.12);
-  --accent: #38bdf8;
-  --accent-foreground: #0b1120;
-  --shadow-accent: 0 18px 36px rgba(56, 189, 248, 0.35);
 }
 
 body {
@@ -61,27 +45,23 @@ body {
 }
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5));
+  background: linear-gradient(135deg, rgba(39, 245, 60, 0.18), rgba(39, 245, 60, 0.05));
   border: 1px solid var(--border);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
-}
-
-[data-theme="dark"] .glass-panel {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.55));
-  box-shadow: 0 20px 60px rgba(8, 47, 73, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 .button-secondary {
   border: 1px solid var(--border);
-  background-color: var(--surface-muted);
+  background-color: transparent;
   color: var(--foreground);
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
   border-color: var(--accent);
-  color: var(--accent);
+  background-color: var(--accent);
+  color: var(--accent-foreground);
 }
 
 .accent-link {
@@ -100,7 +80,7 @@ body {
   background-color: var(--surface-muted);
   color: var(--foreground);
   padding: 0.75rem 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .input-field::placeholder {
@@ -111,28 +91,5 @@ body {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
-}
-
-.theme-toggle {
-  border: 1px solid var(--border);
-  background-color: var(--surface-elevated);
-  color: var(--foreground);
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
-}
-
-.theme-toggle:hover,
-.theme-toggle:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent-foreground);
-  outline: none;
-}
-
-.theme-toggle-label {
-  color: var(--muted-foreground);
-  transition: color 0.2s ease;
-}
-
-.theme-toggle:hover .theme-toggle-label,
-.theme-toggle:focus-visible .theme-toggle-label {
-  color: var(--accent);
+  background-color: rgba(39, 245, 60, 0.06);
 }

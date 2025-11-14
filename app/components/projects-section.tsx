@@ -63,7 +63,11 @@ export function ProjectsSection() {
             transition={{ delay: index * 0.1, duration: 0.7, ease: [0.33, 1, 0.68, 1] }}
             viewport={{ once: true, amount: 0.3 }}
             className="group relative overflow-hidden rounded-3xl border p-8 shadow-lg transition-transform hover:-translate-y-2"
-            style={{ backgroundColor: "var(--surface-elevated)" }}
+            style={{
+              background: "linear-gradient(145deg, rgba(39, 245, 60, 0.14), rgba(39, 245, 60, 0.03))",
+              borderColor: "var(--border)",
+              boxShadow: "0 30px 80px rgba(0, 0, 0, 0.45)",
+            }}
           >
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="space-y-4">
@@ -91,7 +95,11 @@ export function ProjectsSection() {
               <div className="flex flex-col items-start gap-4 md:items-end">
                 <div
                   className="rounded-2xl border px-5 py-3 text-sm font-medium"
-                  style={{ backgroundColor: "var(--surface-muted)", color: "var(--foreground)" }}
+                  style={{
+                    background: "linear-gradient(135deg, rgba(39, 245, 60, 0.22), rgba(39, 245, 60, 0.08))",
+                    color: "var(--foreground)",
+                    borderColor: "var(--border)",
+                  }}
                 >
                   {project.role}
                 </div>
