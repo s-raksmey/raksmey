@@ -1,22 +1,25 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-white/10 pt-10 text-sm text-neutral-400">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p className="text-neutral-300">
-          © {new Date().getFullYear()} Raksmey. Crafted with intention in Phnom Penh.
+    <motion.footer
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="mt-16 rounded-3xl border px-6 py-6 text-sm shadow-md"
+      style={{ backgroundColor: "var(--surface-elevated)", color: "var(--muted-foreground)" }}
+    >
+      <div className="flex flex-col gap-3 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <p style={{ color: "var(--foreground)" }}>
+          © {new Date().getFullYear()} Raksmey Sok. Crafted with intention in Phnom Penh.
         </p>
-        <div className="flex flex-wrap items-center gap-4 text-white">
-          <a className="hover:text-[#27F53C]" href="#projects">
-            Projects
-          </a>
-          <a className="hover:text-[#27F53C]" href="#skills">
-            Skills
-          </a>
-          <a className="hover:text-[#27F53C]" href="#contact">
-            Contact
-          </a>
-        </div>
+        <p>
+          Available for select collaborations · <span style={{ color: "var(--accent)" }}>hello@raksmey.design</span>
+        </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

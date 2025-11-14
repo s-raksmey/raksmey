@@ -1,60 +1,133 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const heroVariants = {
+  hidden: { opacity: 0, y: 32 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.8, 0.25, 1] },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  show: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.15 * index, duration: 0.6, ease: [0.33, 1, 0.68, 1] },
+  }),
+};
+
+const highlights = [
+  {
+    label: "Years crafting experiences",
+    value: "08",
+    description: "Bridging research, design, and engineering within high-impact teams.",
+  },
+  {
+    label: "Products launched",
+    value: "36",
+    description: "Design systems, analytics platforms, and immersive brand touchpoints.",
+  },
+  {
+    label: "Workshops facilitated",
+    value: "24",
+    description: "Guiding founders and product orgs through discovery to delivery.",
+  },
+];
+
 export function HomeSection() {
   return (
-    <section className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:items-center">
-      <div className="space-y-6">
-        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[#27F53C]/50 bg-[#27F53C]/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-[#27F53C]">
+    <motion.section
+      variants={heroVariants}
+      initial="hidden"
+      animate="show"
+      className="grid gap-12 rounded-3xl border p-8 shadow-xl backdrop-blur-sm md:grid-cols-[1.2fr_1fr] md:items-center"
+      style={{ backgroundColor: "var(--surface-elevated)" }}
+    >
+      <div className="space-y-8">
+        <span
+          className="inline-flex w-fit items-center gap-2 rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em]"
+          style={{
+            borderColor: "var(--accent)",
+            backgroundColor: "var(--surface-muted)",
+            color: "var(--accent)",
+          }}
+        >
           Portfolio
         </span>
-        <div className="space-y-4">
-          <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Crafting immersive digital experiences with clarity and purpose.
+        <div className="space-y-6">
+          <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl" style={{ color: "var(--foreground)" }}>
+            Crafting poetic interfaces where clarity and delight move in sync.
           </h1>
-          <p className="max-w-xl text-lg text-neutral-300">
-            I’m Raksmey, a multidisciplinary designer and developer focused on building polished,
-            accessible web products that deliver real value. From concept to launch, I bring a
-            meticulous eye for detail and a passion for thoughtful storytelling.
+          <p className="max-w-xl text-lg" style={{ color: "var(--muted-foreground)" }}>
+            I’m Raksmey, an experience designer who codes. I help purposeful brands turn complex
+            systems into elegant journeys—balancing strategy, inclusive storytelling, and tactile
+            execution.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-4">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center rounded-full bg-[#27F53C] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#1ed636]"
+            className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-1"
+            style={{
+              backgroundColor: "var(--accent)",
+              color: "var(--accent-foreground)",
+              boxShadow: "var(--shadow-accent)",
+            }}
           >
             View featured work
+            <span aria-hidden>↗</span>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#27F53C] hover:text-[#27F53C]"
+            className="button-secondary inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold"
           >
             Let’s collaborate
           </a>
         </div>
       </div>
-      <div className="relative hidden md:block">
-        <div className="absolute inset-0 -z-10 rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 blur-2xl" />
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl">
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.2em] text-[#27F53C]">Latest focus</p>
-              <h2 className="text-2xl font-semibold text-white">Design Systems & Frontend Architecture</h2>
-            </div>
-            <p className="text-sm leading-relaxed text-neutral-300">
-              Building scalable component libraries and cohesive brand experiences with modern tooling
-              and rigorous accessibility standards.
-            </p>
-            <div className="grid gap-3 text-sm text-neutral-200">
-              <div className="flex items-center justify-between rounded-xl border border-white/10 bg-black/60 px-4 py-3">
-                <span className="text-neutral-400">Currently exploring</span>
-                <span className="font-medium text-white">Next.js App Router</span>
+      <div className="space-y-6 rounded-3xl border p-6 shadow-inner" style={{ backgroundColor: "var(--surface-muted)" }}>
+        <div className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--accent)" }}>
+            Current focus
+          </p>
+          <h2 className="text-2xl font-semibold" style={{ color: "var(--foreground)" }}>
+            Design Systems &amp; Frontend Orchestration
+          </h2>
+          <p className="text-sm leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+            Elevating teams with accessible component libraries and high fidelity prototypes that
+            translate seamlessly into production.
+          </p>
+        </div>
+        <div className="grid gap-4">
+          {highlights.map((highlight, index) => (
+            <motion.div
+              key={highlight.label}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate="show"
+              className="group relative overflow-hidden rounded-2xl border p-4"
+              style={{ backgroundColor: "var(--surface-elevated)" }}
+            >
+              <div className="flex items-baseline justify-between">
+                <span className="text-4xl font-semibold" style={{ color: "var(--accent)" }}>
+                  {highlight.value}
+                </span>
+                <span className="text-xs uppercase tracking-[0.3em]" style={{ color: "var(--muted-foreground)" }}>
+                  {highlight.label}
+                </span>
               </div>
-              <div className="flex items-center justify-between rounded-xl border border-white/10 bg-black/60 px-4 py-3">
-                <span className="text-neutral-400">Favorite toolkit</span>
-                <span className="font-medium text-white">Tailwind CSS + Radix</span>
-              </div>
-            </div>
-          </div>
+              <p className="mt-3 text-sm" style={{ color: "var(--muted-foreground)" }}>
+                {highlight.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
