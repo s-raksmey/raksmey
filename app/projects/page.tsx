@@ -27,28 +27,34 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 py-12 sm:px-8">
-        <header className="space-y-3">
-          <h1 className="text-4xl font-semibold text-foreground">Project archive</h1>
-          <p className="text-base text-muted-foreground">
-            A calm overview of selected collaborations. Each project pairs clear goals with accessible design
-            decisions.
+    <div className="relative min-h-screen bg-background text-foreground">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(244,201,125,0.1),_transparent_55%)]" />
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-6 py-16 sm:px-10 lg:px-12">
+        <header className="space-y-6">
+          <p className="section-eyebrow text-accent">Project archive</p>
+          <h1 className="section-heading text-4xl text-foreground sm:text-5xl">A record of thoughtful, enduring collaborations</h1>
+          <p className="max-w-3xl text-base text-muted-foreground sm:text-lg">
+            Each engagement pairs deliberate discovery with crafted delivery. Explore a curated list of projects that
+            balance human narratives with measurable product outcomes.
           </p>
         </header>
-        <div className="space-y-4">
+        <div className="space-y-6">
           {projectArchive.map((project) => (
-            <article key={project.title} className="rounded-xl border border-border bg-(--surface-muted) p-4">
-              <div className="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <article
+              key={project.title}
+              className="relative overflow-hidden rounded-3xl border border-[color:rgba(247,245,239,0.14)] bg-(--surface-elevated) p-6 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[color:rgba(244,201,125,0.7)] hover:shadow-[0_24px_70px_rgba(0,0,0,0.55)] sm:p-8"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.35em] text-[color:rgba(247,245,239,0.55)]">
                 <span>{project.year}</span>
+                <span>Case study</span>
               </div>
-              <h2 className="mt-2 text-2xl font-semibold text-foreground">{project.title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{project.summary}</p>
+              <h2 className="mt-4 section-heading text-3xl text-foreground">{project.title}</h2>
+              <p className="mt-3 text-sm text-muted-foreground sm:text-base">{project.summary}</p>
             </article>
           ))}
         </div>
       </div>
-      <div className="mx-auto w-full max-w-3xl px-6 pb-12 sm:px-8">
+      <div className="mx-auto w-full max-w-5xl px-6 pb-12 sm:px-10 lg:px-12">
         <SiteFooter />
       </div>
     </div>

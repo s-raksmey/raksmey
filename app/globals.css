@@ -2,18 +2,19 @@
 
 :root {
   color-scheme: dark;
-  --background: #0b0d10;
-  --foreground: #f5f6f7;
-  --muted: #11151a;
-  --muted-foreground: rgba(245, 246, 247, 0.7);
-  --border: rgba(140, 255, 174, 0.2);
-  --ring: #8cffae;
-  --surface-elevated: #151a21;
-  --surface-muted: #10151b;
-  --surface-subtle: rgba(140, 255, 174, 0.12);
-  --accent: #8cffae;
-  --accent-foreground: #0b0d10;
-  --shadow-accent: 0 16px 40px rgba(140, 255, 174, 0.25);
+  --background: #000000;
+  --foreground: #f7f5ef;
+  --muted: rgba(255, 255, 255, 0.05);
+  --muted-foreground: rgba(247, 245, 239, 0.72);
+  --border: rgba(247, 245, 239, 0.12);
+  --ring: #f4c97d;
+  --surface-elevated: rgba(15, 15, 15, 0.9);
+  --surface-muted: rgba(10, 10, 10, 0.85);
+  --surface-subtle: rgba(244, 201, 125, 0.12);
+  --accent: #f4c97d;
+  --accent-foreground: #0f0c05;
+  --shadow-accent: 0 24px 70px rgba(244, 201, 125, 0.28);
+  --headline-font: var(--font-garamond, "EB Garamond");
 }
 
 @theme inline {
@@ -38,30 +39,39 @@ body {
     "Segoe UI", sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
+  background-image:
+    radial-gradient(circle at top left, rgba(244, 201, 125, 0.16), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(244, 201, 125, 0.12), transparent 50%);
+  background-attachment: fixed;
 }
 
 * {
   border-color: var(--border);
 }
 
+
 .glass-panel {
-  background: color-mix(in srgb, var(--surface-muted) 80%, transparent);
+  background: color-mix(in srgb, var(--surface-muted) 85%, transparent);
   border: 1px solid var(--border);
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18px);
 }
 
 .button-secondary {
-  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
   background-color: transparent;
   color: var(--foreground);
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
   border-color: var(--accent);
-  background-color: color-mix(in srgb, var(--accent) 18%, transparent);
+  background-color: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .accent-link {
@@ -90,6 +100,25 @@ body {
 .input-field:focus-visible {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
-  background-color: rgba(39, 245, 60, 0.06);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 24%, transparent);
+  background-color: rgba(244, 201, 125, 0.08);
+}
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent) 90%, white 10%);
+}
+
+.section-heading {
+  font-family: var(--headline-font), "Iowan Old Style", "Palatino", serif;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 201, 125, 0.4), transparent);
 }
