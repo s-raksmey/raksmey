@@ -9,7 +9,7 @@ export function SkillsSection() {
         </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-3">
-        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-4">
           <h3 className="text-lg font-semibold text-[color:var(--foreground)]">Strategy</h3>
           <ul className="space-y-1 text-sm text-[color:var(--muted-foreground)]">
             <li>Product discovery</li>
@@ -17,7 +17,7 @@ export function SkillsSection() {
             <li>Stakeholder alignment</li>
           </ul>
         </div>
-        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-4">
           <h3 className="text-lg font-semibold text-[color:var(--foreground)]">Design</h3>
           <ul className="space-y-1 text-sm text-[color:var(--muted-foreground)]">
             <li>Interface systems</li>
@@ -25,7 +25,7 @@ export function SkillsSection() {
             <li>Inclusive writing</li>
           </ul>
         </div>
-        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-4">
           <h3 className="text-lg font-semibold text-[color:var(--foreground)]">Development</h3>
           <ul className="space-y-1 text-sm text-[color:var(--muted-foreground)]">
             <li>React &amp; Next.js</li>

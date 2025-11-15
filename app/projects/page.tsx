@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)]">
+    <div className="min-h-screen bg-(--background) text-[color:var(--foreground)]">
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 py-12 sm:px-8">
         <header className="space-y-3">
           <h1 className="text-4xl font-semibold text-[color:var(--foreground)]">Project archive</h1>
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
         </header>
         <div className="space-y-4">
           {projectArchive.map((project) => (
-            <article key={project.title} className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+            <article key={project.title} className="rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-4">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
                 <span>{project.year}</span>
               </div>

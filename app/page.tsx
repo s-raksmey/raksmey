@@ -6,7 +6,7 @@ import { SkillsSection } from "./components/skills-section";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[color:var(--background)] text-[color:var(--foreground)]">
+    <div className="min-h-screen bg-(--background) text-[color:var(--foreground)]">
       <main className="mx-auto flex w-full max-w-3xl flex-col gap-16 px-6 py-12 sm:px-8">
         <HomeSection />
         <ProjectsSection />

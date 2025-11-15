@@ -1,6 +1,6 @@
 export function ContactSection() {
   return (
-    <section id="contact" className="space-y-6 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6">
+    <section id="contact" className="space-y-6 rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-6">
       <div className="space-y-3 text-center sm:text-left">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--accent)]">Contact</p>
         <h2 className="text-3xl font-semibold text-[color:var(--foreground)]">Let’s start a conversation</h2>
@@ -28,7 +28,7 @@ export function ContactSection() {
         </label>
         <button
           type="submit"
-          className="inline-flex w-fit items-center justify-center rounded-full bg-[color:var(--accent)] px-5 py-2 text-sm font-semibold text-[color:var(--accent-foreground)]"
+          className="inline-flex w-fit items-center justify-center rounded-full bg-(--accent) px-5 py-2 text-sm font-semibold text-[color:var(--accent-foreground)]"
         >
           Send message
         </button>
