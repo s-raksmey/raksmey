@@ -1,67 +1,39 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-const skillGroups = [
-  {
-    title: "Strategy",
-    items: ["Product Discovery", "UX Research", "Design Sprints"],
-  },
-  {
-    title: "Design",
-    items: ["Design Systems", "Interface Design", "Prototyping"],
-  },
-  {
-    title: "Development",
-    items: ["React & Next.js", "TypeScript", "Accessibility"],
-  },
-];
-
 export function SkillsSection() {
   return (
-    <motion.section
-      id="skills"
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.3 }}
-      className="space-y-8"
-    >
-      <div className="flex flex-col gap-3">
-        <span className="text-sm font-semibold uppercase tracking-[0.4em] text-[color:var(--accent)]">
-          Expertise
-        </span>
-        <h2 className="text-3xl font-semibold text-[color:var(--foreground)] sm:text-4xl">
-          Bridging research, design, and technology for cohesive products.
-        </h2>
-        <p className="max-w-2xl text-base text-[color:var(--muted-foreground)]">
-          Modular thinking meets storytelling craft—equipping teams with processes, rituals, and component systems that amplify velocity.
+    <section id="skills" className="space-y-6">
+      <div className="space-y-3 text-center sm:text-left">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--accent)]">Skills</p>
+        <h2 className="text-3xl font-semibold text-[color:var(--foreground)]">Practical tools I lean on</h2>
+        <p className="text-base text-[color:var(--muted-foreground)]">
+          A compact list of the research, design, and development practices that keep my work grounded and easy to maintain.
         </p>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
-        {skillGroups.map((group, index) => (
-          <motion.div
-            key={group.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.4 }}
-            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]/80 p-6"
-          >
-            <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
-              {group.title}
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm text-[color:var(--muted-foreground)]">
-              {group.items.map((skill) => (
-                <li key={skill} className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
-                  <span>{skill}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+      <div className="grid gap-4 sm:grid-cols-3">
+        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+          <h3 className="text-lg font-semibold text-[color:var(--foreground)]">Strategy</h3>
+          <ul className="space-y-1 text-sm text-[color:var(--muted-foreground)]">
+            <li>Product discovery</li>
+            <li>Workshop facilitation</li>
+            <li>Stakeholder alignment</li>
+          </ul>
+        </div>
+        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+          <h3 className="text-lg font-semibold text-[color:var(--foreground)]">Design</h3>
+          <ul className="space-y-1 text-sm text-[color:var(--muted-foreground)]">
+            <li>Interface systems</li>
+            <li>Rapid prototyping</li>
+            <li>Inclusive writing</li>
+          </ul>
+        </div>
+        <div className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+          <h3 className="text-lg font-semibold text-[color:var(--foreground)]">Development</h3>
+          <ul className="space-y-1 text-sm text-[color:var(--muted-foreground)]">
+            <li>React &amp; Next.js</li>
+            <li>TypeScript foundations</li>
+            <li>Accessibility reviews</li>
+          </ul>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
