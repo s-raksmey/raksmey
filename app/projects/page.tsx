@@ -27,23 +27,23 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-(--background) text-[color:var(--foreground)]">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-6 py-12 sm:px-8">
         <header className="space-y-3">
-          <h1 className="text-4xl font-semibold text-[color:var(--foreground)]">Project archive</h1>
-          <p className="text-base text-[color:var(--muted-foreground)]">
+          <h1 className="text-4xl font-semibold text-foreground">Project archive</h1>
+          <p className="text-base text-muted-foreground">
             A calm overview of selected collaborations. Each project pairs clear goals with accessible design
             decisions.
           </p>
         </header>
         <div className="space-y-4">
           {projectArchive.map((project) => (
-            <article key={project.title} className="rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-4">
-              <div className="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-[color:var(--muted-foreground)]">
+            <article key={project.title} className="rounded-xl border border-border bg-(--surface-muted) p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 <span>{project.year}</span>
               </div>
-              <h2 className="mt-2 text-2xl font-semibold text-[color:var(--foreground)]">{project.title}</h2>
-              <p className="mt-2 text-sm text-[color:var(--muted-foreground)]">{project.summary}</p>
+              <h2 className="mt-2 text-2xl font-semibold text-foreground">{project.title}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{project.summary}</p>
             </article>
           ))}
         </div>
