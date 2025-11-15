@@ -32,7 +32,7 @@ export function ProjectsSection() {
         {highlightedProjects.map((project) => (
           <article
             key={project.title}
-            className="space-y-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4"
+            className="space-y-2 rounded-xl border border-[color:var(--border)] bg-(--surface-muted) p-4"
           >
             <h3 className="text-xl font-semibold text-[color:var(--foreground)]">{project.title}</h3>
             <p className="text-sm text-[color:var(--muted-foreground)]">{project.description}</p>
